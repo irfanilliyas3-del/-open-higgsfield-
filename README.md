@@ -117,6 +117,23 @@ HF_API_BASE_URL=                      # generation API origin, server only
 OPEN_HIGGSFIELD_READ_WRITE_TOKEN=     # Vercel Blob read-write token
 ```
 
+### Other generation backends
+
+Any server speaking the same wire — `POST /{model}`,
+`GET /requests/{id}/status`, `Authorization: Key …` — can stand in for
+the generation API. [LivePair](https://livepairai.com/hf) exposes a
+compatible endpoint:
+
+```bash
+HF_API_BASE_URL=https://livepairai.com/hf
+```
+
+Paste `key:lp_…` as the platform key (create the `lp_` key at
+https://livepairai.com/settings — calls bill prepaid credits per
+result, no subscription). Model paths map by surface: image entries
+render on Seedream/Qwen models, video on Wan 3.0, with higgsfield-only
+knobs dropped.
+
 ### Commands
 
 | Command | What it does |
